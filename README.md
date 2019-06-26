@@ -8,7 +8,6 @@ See [BRIEF.md](/BRIEF.md) for info.
 
 SQlite not ideal, but don't want to make things big for this.
 
-
 #Plan
 
 We’re starting with Reception shifts but this same system can be applied to any department or role inside the organisation.

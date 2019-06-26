@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @position.location.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @position.name %>
+</p>
+
+<p>
+  <strong>Min staff:</strong>
+  <%= @position.min_staff %>
+</p>
+
+<p>
+  <strong>Max staff:</strong>
+  <%= @position.max_staff %>
+</p>
+
+<p>
+  <strong>Min shift duration hrs:</strong>
+  <%= @position.min_shift_duration_hrs %>
+</p>
+
+<p>
+  <strong>Max shift duration hrs:</strong>
+  <%= @position.max_shift_duration_hrs %>
+</p>
+
+<%= link_to 'Edit', edit_position_path(@position) %> |
+<%= link_to 'Back', positions_path %>

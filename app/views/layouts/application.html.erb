@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SohoHouseReception</title>
+    <title>Soho House</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,54 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <%= link_to 'Soho House', root_path, class: 'navbar-brand col-sm-3 col-md-2 mr-0', data: { turbolinks: false } %>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+
+              <li class="nav-item">
+                <%= link_to users_path, class: "nav-link", data: { turbolinks: false } do %>
+                  Users
+                <% end %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to locations_path, class: "nav-link", data: { turbolinks: false } do %>
+                  Locations
+                <% end %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to positions_path, class: "nav-link", data: { turbolinks: false } do %>
+                  Positions
+                <% end %>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Icons -->
+    <%= javascript_include_tag 'feather.min', 'data-turbolinks-track': 'reload' %>
+    <script>
+      feather.replace()
+    </script>
+
+
   </body>
 </html>

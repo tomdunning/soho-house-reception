@@ -35,7 +35,7 @@ RSpec.describe Location, type: :model do
 
       it 'is invalid and returns errors' do
         expect(subject).not_to be_valid
-        expecT(subject.errors[:name]).to include("has already been taken")
+        expect(subject.errors[:name]).to include("has already been taken")
       end
     end
   end

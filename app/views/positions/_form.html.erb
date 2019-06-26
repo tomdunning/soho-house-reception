@@ -1,0 +1,47 @@
+<%= form_with(model: position, local: true) do |form| %>
+  <% if position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(position.errors.count, "error") %> prohibited this position from being saved:</h2>
+
+      <ul>
+      <% position.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :location_id, 'Location' %>
+    <%= form.select :location_id, @locations %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_staff %>
+    <%= form.number_field :min_staff %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_staff %>
+    <%= form.number_field :max_staff %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_shift_duration_hrs %>
+    <%= form.text_field :min_shift_duration_hrs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_shift_duration_hrs %>
+    <%= form.text_field :max_shift_duration_hrs %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

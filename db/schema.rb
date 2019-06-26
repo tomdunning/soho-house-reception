@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_26_153539) do
+ActiveRecord::Schema.define(version: 2019_06_26_155633) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 2019_06_26_153539) do
     t.string "country_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.integer "location_id"
+    t.string "name"
+    t.integer "min_staff", default: 1
+    t.integer "max_staff", default: 1
+    t.float "min_shift_duration_hrs"
+    t.float "max_shift_duration_hrs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_positions_on_location_id"
   end
 
   create_table "users", force: :cascade do |t|
