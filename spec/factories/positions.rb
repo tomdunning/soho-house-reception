@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :position do
     association :location
 
-    name { "Receptionist" }
+    name { 'Receptionist' }
 
     min_shift_duration_hrs { 1.0 }
     max_shift_duration_hrs { 8.0 }

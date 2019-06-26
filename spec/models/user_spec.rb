@@ -1,19 +1,21 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
+require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe '#validate' do
     subject { described_class.new(params) }
 
     context 'with minimum required params' do
-
-      let(:params) { {
-        first_name: 'Tom',
-        last_name: 'Thumb',
-        email: 'tom.thumb@google.com',
-        password: 'newpass',
-        password_confirmation: 'newpass'
-      } }
+      let(:params) do
+        {
+          first_name: 'Tom',
+          last_name: 'Thumb',
+          email: 'tom.thumb@google.com',
+          password: 'newpass',
+          password_confirmation: 'newpass'
+        }
+      end
 
       it 'is valid' do
         expect(subject).to be_valid
@@ -31,5 +33,4 @@ RSpec.describe User, type: :model do
       end
     end
   end
-
 end

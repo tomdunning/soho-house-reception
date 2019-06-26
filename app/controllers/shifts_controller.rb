@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ShiftsController < ApplicationController
-  before_action :set_shift, only: [:show, :edit, :update, :destroy]
+  before_action :set_shift, only: %i[show edit update destroy]
 
   # GET /shifts
   # GET /shifts.json
@@ -9,8 +11,7 @@ class ShiftsController < ApplicationController
 
   # GET /shifts/1
   # GET /shifts/1.json
-  def show
-  end
+  def show; end
 
   # GET /shifts/new
   def new
@@ -18,8 +19,7 @@ class ShiftsController < ApplicationController
   end
 
   # GET /shifts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /shifts
   # POST /shifts.json
@@ -62,13 +62,14 @@ class ShiftsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_shift
-      @shift = Shift.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def shift_params
-      params.require(:shift).permit(:position_id, :user_id, :start_at, :end_at)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_shift
+    @shift = Shift.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def shift_params
+    params.require(:shift).permit(:position_id, :user_id, :start_at, :end_at)
+  end
 end

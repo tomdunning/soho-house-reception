@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Location, type: :model do
-
   describe '#validate' do
     subject { described_class.new(params) }
 
@@ -28,14 +29,13 @@ RSpec.describe Location, type: :model do
       end
     end
 
-
     context 'with a duplicate name' do
       let(:location_1) { create(:location) }
       let(:params) { { name: location_1.name } }
 
       it 'is invalid and returns errors' do
         expect(subject).not_to be_valid
-        expect(subject.errors[:name]).to include("has already been taken")
+        expect(subject.errors[:name]).to include('has already been taken')
       end
     end
   end

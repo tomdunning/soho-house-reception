@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "shifts/show", type: :view do
+RSpec.describe 'shifts/show', type: :view do
   let(:shift) { create(:shift) }
   before(:each) do
     @shift = assign(:shift, shift)
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(shift.user.name)
     expect(rendered).to match(shift.position.name)

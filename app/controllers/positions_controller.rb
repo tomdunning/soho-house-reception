@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class PositionsController < ApplicationController
-  before_action :set_position, only: [:show, :edit, :update, :destroy]
-  before_action :set_locations, only: [:new, :create, :edit, :update]
+  before_action :set_position, only: %i[show edit update destroy]
+  before_action :set_locations, only: %i[new create edit update]
 
   # GET /positions
   # GET /positions.json
@@ -10,8 +12,7 @@ class PositionsController < ApplicationController
 
   # GET /positions/1
   # GET /positions/1.json
-  def show
-  end
+  def show; end
 
   # GET /positions/new
   def new
@@ -19,8 +20,7 @@ class PositionsController < ApplicationController
   end
 
   # GET /positions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /positions
   # POST /positions.json
@@ -63,17 +63,18 @@ class PositionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_position
-      @position = Position.find(params[:id])
-    end
 
-    def set_locations
-      @locations = Location.all.pluck(:name, :id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_position
+    @position = Position.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def position_params
-      params.require(:position).permit(:location_id, :name, :min_staff, :max_staff, :min_shift_duration_hrs, :max_shift_duration_hrs)
-    end
+  def set_locations
+    @locations = Location.all.pluck(:name, :id)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def position_params
+    params.require(:position).permit(:location_id, :name, :min_staff, :max_staff, :min_shift_duration_hrs, :max_shift_duration_hrs)
+  end
 end
