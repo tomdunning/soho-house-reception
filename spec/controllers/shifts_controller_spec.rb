@@ -100,7 +100,7 @@ RSpec.describe ShiftsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        {end_at: valid_attributes[:end_at] + 1.hour}
+        {end_at: valid_attributes[:end_at] - 1.hour}
       }
 
       it "updates the requested shift" do

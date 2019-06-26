@@ -8,6 +8,7 @@ See [BRIEF.md](/BRIEF.md) for info.
 
 SQlite not ideal, but don't want to make things big for this.
 
+
 #Plan
 
 We’re starting with Reception shifts but this same system can be applied to any department or role inside the organisation.
@@ -57,3 +58,9 @@ To begin with we can start with:
 Location -< Positions -< Shifts
 
 User -< Shifts
+
+
+# Questions & comments
+
+- There's no rule to prevent back to back shifts
+- How should we count hours for shifts that span weeks?
