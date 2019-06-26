@@ -1,8 +1,12 @@
 # Intro
 
 Tech test of the [Soho House reception scheduler](https://github.com/SohoHouse/reception-scheduler)
+(This wasn't forked, so it's less obvious to other candidates)
 
 See [BRIEF.md](/BRIEF.md) for info.
+
+
+SQlite not ideal, but don't want to make things big for this.
 
 
 #Plan
@@ -19,7 +23,7 @@ Creating the Role model initially will allow the extension of the system without
 
 ##What do we need to consider in the long term?
 
-- Access restriction and visibility
+- Access restriction and visibility (Devise + Pundit probably.)
 - Highlighting uncovered time to managers
 - Sick leave & last minute cancellations - Can anyone cancel last minute or should it be management only? What time period is - appropriate? e.g. locked 1 week before shift?
 - Holiday - for shift work, this is more a question of payroll but needs to be accounted for
@@ -29,6 +33,7 @@ Creating the Role model initially will allow the extension of the system without
 - Download or email of iCal objects, to import into user’s diary
 - Integration with payroll system for hours worked
 - If salaries are set across the org then roles need to be common across locations
+- Badge based auth / sign in
 
 
 ##So what could be the long term approach to this?
