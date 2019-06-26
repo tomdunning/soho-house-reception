@@ -33,6 +33,7 @@ Creating the Role model initially will allow the extension of the system without
 - Integration with payroll system for hours worked
 - If salaries are set across the org then roles need to be common across locations
 - Badge based auth / sign in
+- Assign users to locations
 
 
 ##So what could be the long term approach to this?
